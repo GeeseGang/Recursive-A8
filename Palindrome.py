@@ -1,22 +1,23 @@
 #  File: Palindrome.py
 
-#  Description:
+#  Description: finds the shortest palindrome that can be made by adding
+#  letters to the beginning of a string
 
-#  Student Name:
+#  Student Name: Samantha De Figueiredo
 
-#  Student UT EID:
+#  Student UT EID: mfd592
 
-#  Partner Name:
+#  Partner Name: David Easter
 
-#  Partner UT EID:
+#  Partner UT EID: dme792
 
 #  Course Name: CS 313E
 
-#  Unique Number:
+#  Unique Number: 52235
 
-#  Date Created:
+#  Date Created: 2/26/2021
 
-#  Date Last Modified:
+#  Date Last Modified: 2/28/2021
 
 import sys
 
@@ -27,14 +28,15 @@ import sys
 def smallest_palindrome(str):
     result = ''
     for x in range(len(str)):
+
+        # Checks if the current longest substring is a palindrome
         sub = str[0:len(str)-x]
         reverse = sub[::-1]
-        #print(reverse)
         if(sub == reverse):
-            #print(sub, reverse, '\n')
+
+            # Adds on the end to the beginning
             addition = str[len(str)-x:]
             result = addition[::-1] + sub + addition
-            #result = sub
             break
 
     return result
